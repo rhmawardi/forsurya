@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Surr</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/x-icon" href="./srcImages/favicon-16x16.png">
+    <style>
+        .heading {
+            margin: 10px 0;
+            padding: 0;
+            line-height: 1.5;
+        }
+
+        .heading span {
+            display: block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+    <h1 class="heading">Happy Birthday Surya!! <br>🥳🥳🎉🎉<br> <span>Wishing your success, happiness, and good health. Cheers to more amazing memories together!🥂</span></h1>
+
+    <!-- Audio Element -->
+    <audio id="birthdayAudio" src="hbd.mp3" loop></audio>
+
+    <script>
+        // Fungsi untuk memulai audio setelah interaksi pengguna
+        function startAudio() {
+            const audio = document.getElementById('birthdayAudio');
+            audio.play().then(() => {
+                console.log("Audio is playing!");
+            }).catch((error) => {
+                console.error("Autoplay was prevented:", error);
+            });
+        }
+
+        // Mulai audio setelah interaksi pertama (klik atau sentuh)
+        document.addEventListener('click', startAudio, { once: true });
+        document.addEventListener('touchstart', startAudio, { once: true });
+    </script>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
