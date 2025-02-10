@@ -1,3 +1,31 @@
+// Add this at the beginning of your script.js file
+document.addEventListener('DOMContentLoaded', function() {
+    const audio = document.getElementById('birthdayAudio');
+    const playButton = document.getElementById('playButton');
+    let isPlaying = false;
+
+    playButton.addEventListener('click', function() {
+        if (isPlaying) {
+            audio.pause();
+            playButton.textContent = 'Play Music 🎵';
+            playButton.classList.remove('playing');
+        } else {
+            audio.play();
+            playButton.textContent = 'Pause Music 🎵';
+            playButton.classList.add('playing');
+        }
+        isPlaying = !isPlaying;
+    });
+
+    // Handle audio ending
+    audio.addEventListener('ended', function() {
+        isPlaying = false;
+        playButton.textContent = 'Play Music 🎵';
+        playButton.classList.remove('playing');
+    });
+});
+
+// Rest of your existing script.js code goes here...
 const canvas = document.getElementById('canvas');
 
 const context = canvas.getContext('2d');
