@@ -44,6 +44,14 @@
             border-color: rgb(0, 156, 203);
         }
 
+        /* Added styles for cake image */
+        .cake-image {
+            display: block;
+            margin: 20px auto;
+            max-width: 200px;
+            border: 2px solid black;
+        }
+
         @media screen and (max-width: 768px) {
             #playButton {
                 bottom: 15px;
@@ -51,11 +59,17 @@
                 padding: 8px 16px;
                 font-size: 14px;
             }
+            
+            .cake-image {
+                max-width: 150px;
+            }
         }
     </style>
 </head>
 <body>
     <canvas id="canvas"></canvas>
+    <!-- Added cake image -->
+    <img src="cake.png" alt="Birthday Cake" class="cake-image">
     <h1 class="heading">Happy Birthday Surya!! <br>🥳🥳🎉🎉<br> <span>Wishing your success, happiness, and good health. Cheers to more amazing memories together!🥂</span></h1>
 
     <!-- Audio Element -->
@@ -65,3 +79,5 @@
     <button id="playButton">Play Music 🎵</button>
 
     <script src="./script.js"></script>
+</body>
+</html>
