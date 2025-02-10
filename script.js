@@ -1,20 +1,19 @@
 // Audio Control
 document.addEventListener('DOMContentLoaded', function() {
     const audio = document.getElementById('birthdayAudio');
-    const audioBtn = document.querySelector('.audio-btn');
-    const btnText = audioBtn.querySelector('.btn-text');
+    const playButton = document.getElementById('playButton');
     let isPlaying = false;
 
-    audioBtn.addEventListener('click', function() {
+    playButton.addEventListener('click', function() {
         if (isPlaying) {
             audio.pause();
-            btnText.textContent = 'Play Music';
-            audioBtn.classList.remove('playing');
+            playButton.textContent = 'Play Music 🎵';
+            playButton.classList.remove('playing');
         } else {
             audio.play()
                 .then(() => {
-                    btnText.textContent = 'Pause Music';
-                    audioBtn.classList.add('playing');
+                    playButton.textContent = 'Pause Music 🎵';
+                    playButton.classList.add('playing');
                 })
                 .catch(error => {
                     console.log("Audio playback failed:", error);
@@ -26,11 +25,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Handle audio ending
     audio.addEventListener('ended', function() {
         isPlaying = false;
-        btnText.textContent = 'Play Music';
-        audioBtn.classList.remove('playing');
+        playButton.textContent = 'Play Music 🎵';
+        playButton.classList.remove('playing');
     });
 });
-
 
 // Rest of your existing script.js code goes here...
 const canvas = document.getElementById('canvas');
