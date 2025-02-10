@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-body{
+body {
     margin: 0;
     padding: 0;
     overflow: hidden;
     box-sizing: border-box;
 }
 
-.heading{
-    font-size: 4.5rem;
+.heading {
+    font-size: clamp(2rem, 8vw, 4.5rem);
     color: white;
     z-index: 1;
     position: absolute;
@@ -18,44 +18,43 @@ body{
     text-align: center;
     font-weight: 600;
     transform: translateX(-50%) translateY(-50%);
-    line-height: 70px;
+    line-height: 1.2;
+    padding: 0 20px;
+    width: 100%;
+    max-width: 90vw;
     animation: animHeading 2s linear infinite;
 }
 
-.heading span{
-    font-size: 2rem;
+.heading span {
+    font-size: clamp(1.2rem, 4vw, 2rem);
     color: rgb(0, 156, 203);
+    display: block;
+    margin-top: 20px;
 }
 
 @keyframes animHeading {
-    0%{
+    0% {
         filter: drop-shadow(0px 0px 50px rgba(13, 166, 255, 0.826)) hue-rotate(0deg);
-        
     }
-    50%{
+    50% {
         filter: drop-shadow(0px 0px 100px rgba(13, 166, 255, 0.826)) hue-rotate(120deg);
     }
-    100%{
+    100% {
         filter: drop-shadow(0px 0px 50px rgba(13, 166, 255, 0.826)) hue-rotate(0deg);
     }
 }
 
-
-
-/* -----------------Bottom Github Source Code Link Styling ------------------------ */
-
-
-.sourceCodeLink{
+.sourceCodeLink {
     position: absolute;
     bottom: 10px;
-    right: 20px;
-    width: 54px;
+    right: 10px;
+    width: 40px;
     overflow: hidden;
     z-index: 10;
     display: flex;
     align-items: center;
     background-color: white;
-    padding: 6px 8px;
+    padding: 4px 6px;
     border-radius: 55px;
     transition: .2s;
     color: black;
@@ -63,21 +62,42 @@ body{
     cursor: pointer;
 }
 
-.sourceCodeLink img{
-    width: 55px;
+.sourceCodeLink img {
+    width: 40px;
     border-radius: 50%;
 }
 
-.sourceCodeLink p{
+.sourceCodeLink p {
     font-family: 'Poppins';
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin: 0;
-    margin-left: 10px;
+    margin-left: 8px;
     text-decoration: none;
     white-space: nowrap;
 }
 
-.sourceCodeLink:hover{
-    width: 222px;
+.sourceCodeLink:hover {
+    width: 180px;
 }
 
+/* Media queries for better mobile responsiveness */
+@media screen and (max-width: 768px) {
+    .heading {
+        line-height: 1.3;
+        top: 50%;
+    }
+    
+    .heading br {
+        display: none;
+    }
+    
+    .sourceCodeLink:hover {
+        width: 40px; /* Disable hover expansion on mobile */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .heading {
+        padding: 0 15px;
+    }
+}
