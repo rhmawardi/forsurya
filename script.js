@@ -31,6 +31,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Your existing canvas animation code here
+const canvas = document.getElementById('canvas');
+// ... rest of your existing code ...
+
 
 // Rest of your existing script.js code goes here...
 const canvas = document.getElementById('canvas');
